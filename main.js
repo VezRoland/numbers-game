@@ -2,13 +2,13 @@ import { genarateRandomNr, compare } from './utils.js'
 
 const randomNumber = genarateRandomNr(1, 20)
 const msg="Nincs több tippelési lehetőséged!"
-let atemptsRemaning=5
+let attemptsRemaning=5
 
 export function atempt(UserAns,randomNr){
-    atemptsRemaning--
-    document.getElementById("atemptsRemaning").innerHTML=atemptsRemaning
+    attemptsRemaning--
+    document.getElementById("attemptsRemaning").innerHTML=attemptsRemaning
     if(UserAns!=randomNr){
-        if(atemptsRemaning==0){
+        if(attemptsRemaning==0){
             document.querySelector("button").disabled=true
             document.querySelector('.msg').textContent = msg
         }
@@ -29,5 +29,7 @@ export function check(event) {
 	atempt(inputNumber,randomNumber)
 }
 
-document.querySelector('#form').onsubmit = check
-document.getElementById("atemptsRemaning").innerHTML=atemptsRemaning
+window.addEventListener('DOMContentLoaded', () => {
+	document.querySelector('#form').onsubmit = check
+	document.getElementById("attemptsRemaning").innerHTML=attemptsRemaning
+})
