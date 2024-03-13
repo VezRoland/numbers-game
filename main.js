@@ -29,7 +29,5 @@ export function check(event) {
 	atempt(inputNumber,randomNumber)
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-	document.querySelector('#form').onsubmit = check
-	document.getElementById("attemptsRemaning").innerHTML=attemptsRemaning
-})
+document.querySelector('#form').onsubmit = check
+document.getElementById("attemptsRemaning").innerHTML=attemptsRemaning
