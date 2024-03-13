@@ -1,12 +1,10 @@
 import { genarateRandomNr, compare } from './utils.js'
 
-const randomNumber = genarateRandomNr(0, 20)
+const randomNumber = genarateRandomNr(1, 20)
 const msg="Nincs több tippelési lehetőséged!"
 let atemptsRemaning=5
 
-console.log(randomNumber)
-
-function atempt(UserAns,randomNr){
+export function atempt(UserAns,randomNr){
     atemptsRemaning--
     document.getElementById("atemptsRemaning").innerHTML=atemptsRemaning
     if(UserAns!=randomNr){
@@ -19,7 +17,7 @@ function atempt(UserAns,randomNr){
 		}
 }
 
-function check(event) {
+export function check(event) {
 	event.preventDefault()
 	const formData = new FormData(event.target)
 	const inputNumber = parseInt(formData.get('number'))
