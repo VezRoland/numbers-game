@@ -4,6 +4,8 @@ const randomNumber = genarateRandomNr(0, 20)
 const msg="Nincs több tippelési lehetőséged!"
 let atemptsRemaning=5
 
+console.log(randomNumber)
+
 function atempt(UserAns,randomNr){
     atemptsRemaning--
     document.getElementById("atemptsRemaning").innerHTML=atemptsRemaning
@@ -12,7 +14,9 @@ function atempt(UserAns,randomNr){
             document.querySelector("button").disabled=true
             document.querySelector('.msg').textContent = msg
         }
-    }
+    } else {
+			document.querySelector("button").disabled=true
+		}
 }
 
 function check(event) {
@@ -28,3 +32,4 @@ function check(event) {
 }
 
 document.querySelector('#form').onsubmit = check
+document.getElementById("atemptsRemaning").innerHTML=atemptsRemaning

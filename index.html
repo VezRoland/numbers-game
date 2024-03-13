@@ -3,15 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<script defer src="main.js" type="module"></script>
 	<title>Találd ki a számot</title>
 </head>
-<body>
-	<form id="form">
-		<input type="text" name="number">
-		<button type="submit">submit</button>
-		<div class="msg"></div>
-		<p>Próbálkozási lehetőségek száma:<span id="atemptsRemaning"></span></p>
-	</form>
+<body class="h-screen grid place-items-center p-6 bg-zinc-900">
+	<main class="flex flex-col gap-4 p-6 rounded-lg shadow-xl text-white bg-zinc-800">
+		<h1 class="text-center text-xl">Találd ki a számot!</h1>
+		<div class="msg min-h-[2.25em] grid place-items-center px-3 rounded-lg border-2 border-zinc-700"></div>
+		<form class="flex flex-col md:flex-row gap-2" id="form">
+			<input class="px-3 py-2 rounded-lg text-black" type="text" name="number">
+			<button class="px-3 py-2 rounded-lg bg-violet-500 disabled:bg-zinc-700 disabled:cursor-not-allowed" type="submit">Ellenőrzés</button>
+		</form>
+		<p class="text-center text-zinc-400">Próbálkozási lehetőségek száma: <span class="font-bold" id="atemptsRemaning">0</span></p>
+	</main>
 </body>
 </html>
